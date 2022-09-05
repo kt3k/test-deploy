@@ -17,4 +17,4 @@ jobs:
           entrypoint: main.ts
 
       - name: Check deployment
-        runs: curl https://kt3k-test-deploy.deno.dev/
+        run: curl https://kt3k-test-deploy.deno.dev/
