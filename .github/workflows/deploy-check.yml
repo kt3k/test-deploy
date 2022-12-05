@@ -14,5 +14,5 @@ jobs:
       - name: Set up Deno
         uses: denoland/setup-deno@1
 
-      - runs: deno run --allow-net deploy-check.ts
+      - run: deno run --allow-net deploy-check.ts
 
