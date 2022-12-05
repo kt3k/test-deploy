@@ -10,11 +10,13 @@ if (!branch) {
 
 const deployName = branch === "main" ? projectName : `${projectName}--${branch.replace(/\//g, "-")}`;
 
-retry(async () => {
+await retry(async () => {
   console.log(`Checking https://${deployName}.deno.dev`)
   const resp = await fetch(`https://${deployName}.deno.dev`);
   await resp.text();
   if (resp.status !== 200) {
+    console.log(`https://${deployName}.deno.dev is unavailable`);
     throw new Error("failed");
   }
+  console.log(`https://${deployName}.deno.dev is available`);
 });
