@@ -1,0 +1,18 @@
+name: Deploy Check
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+jobs:
+  deploy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@3
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@1
+
+      - runs: deno run --allow-net deploy-check.ts
+
