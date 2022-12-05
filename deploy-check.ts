@@ -11,8 +11,8 @@ if (!branch) {
 const deployName = branch === "main" ? projectName : `${projectName}--${branch.replace(/\//g, "-")}`;
 
 retry(async () => {
-  console.log(`Checking ${deployName}.deno.dev`)
-  const resp = await fetch(`${deployName}.deno.dev`);
+  console.log(`Checking https://${deployName}.deno.dev`)
+  const resp = await fetch(`https://${deployName}.deno.dev`);
   await resp.text();
   if (resp.status !== 200) {
     throw new Error("failed");
