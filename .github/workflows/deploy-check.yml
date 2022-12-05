@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
-        uses: actions/checkout@3
+        uses: actions/checkout@v3
 
       - name: Set up Deno
-        uses: denoland/setup-deno@1
+        uses: denoland/setup-deno@v1
 
       - run: deno run --allow-net deploy-check.ts
 
