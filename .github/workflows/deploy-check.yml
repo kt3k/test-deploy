@@ -14,4 +14,4 @@ jobs:
       - name: Set up Deno
         uses: denoland/setup-deno@v1
 
-      - run: deno run --allow-net deploy-check.ts ${GITHUB_HEAD_REF:-GITHUB_REF_NAME}
+      - run: deno run --allow-net deploy-check.ts ${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}
